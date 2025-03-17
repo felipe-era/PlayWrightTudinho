@@ -1,0 +1,21 @@
+{
+  "responseCode": 200,
+  "user": {
+    "id": 609347,
+    "name": "Felipe Eduardoabc",
+    "email": "abcdxxea@gmail.com",
+    "title": "Mr",
+    "birth_day": "10",
+    "birth_month": "05",
+    "birth_year": "1990",
+    "first_name": "João",
+    "last_name": "Silva",
+    "company": "Empresa XYZ",
+    "address1": "Rua 123",
+    "address2": "Bairro Exemplo",
+    "country": "Brazil",
+    "state": "Distrito Federal",
+    "city": "Brasília",
+    "zipcode": "12345"
+  }
+}
