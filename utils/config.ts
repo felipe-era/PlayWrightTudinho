@@ -6,7 +6,7 @@ const devConfig = {
   };
   
   const homologConfig = {
-    baseUrl: 'xxxxxxx' 
+    baseUrl: 'Teste' 
   };
   
   //devConfig' ou 'homologConfig' conforme necessário
