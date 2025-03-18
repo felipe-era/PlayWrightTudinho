@@ -288,7 +288,8 @@ test('CT015 - Faz o pedido e registra após o checkout', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Name' }).click();
   await page.getByRole('textbox', { name: 'Name' }).fill('Nome tal tal');
   await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
-  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('manodoceu@gmail.com');
+  const numero = Math.floor(Math.random() * 900) + 100;
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill(numero + 'a' + email_user);
   await page.getByRole('button', { name: 'Signup' }).click();
   await page.getByRole('radio', { name: 'Mr.' }).check();
   await page.getByRole('textbox', { name: 'Password *' }).click();
@@ -374,8 +375,10 @@ test('CT017 - Remover produtos do carrinho', async ({ page }) => {
   await expect(page.locator('#cart_info')).toBeVisible();
   const itemsCount = await page.locator('#cart_info tbody tr').count();
   expect(itemsCount).toBe(2);
-  await page.locator('#product-2').getByRole('cell', { name: '' }).locator('a').click();
-  await page.getByRole('cell', { name: '' }).locator('a').click();
+  await page.click('a.cart_quantity_delete[data-product-id="1"]');
+  await page.click('a.cart_quantity_delete[data-product-id="2"]');
+
+
   await expect(page.locator('#empty_cart')).toBeVisible();
 
 });
@@ -547,7 +550,7 @@ test('CT024 - Baixar fatura após compra', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Name' }).fill('Fefe');
   await page.getByRole('textbox', { name: 'Name' }).press('Tab');
   await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
-  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('ab' + email_user);
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('abc' + email_user);
   await page.getByRole('button', { name: 'Signup' }).click();
   await page.getByRole('textbox', { name: 'Password *' }).click();
   await page.getByRole('textbox', { name: 'Password *' }).fill('123456');
